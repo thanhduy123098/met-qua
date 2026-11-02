@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Bản thử giao diện quản lý WebPOS. Sử dụng dữ liệu minh họa.">
+  <title>Đơn hàng · WebPOS bản thử</title>
+  <link rel="stylesheet" href="css/ui-theme.css">
+  <link rel="stylesheet" href="css/admin-theme.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/admin-management.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Đến nội dung chính</a><header class="app-header"><div class="header-inner">
+  <a class="brand" href="manager.html" aria-label="WebPOS, menu quản lý"><span class="brand-symbol" data-icon="store" aria-hidden="true"></span><span>WebPOS<small>Quản lý cửa hàng</small></span></a>
+  
+  <div class="header-actions"><span class="trial-badge">Bản thử · Glass</span><a class="logout-link" href="login.html" aria-label="Đăng xuất về màn hình đăng nhập mẫu" title="Đăng xuất"><span class="" data-icon="logout" aria-hidden="true"></span></a></div>
+</div></header>
+<nav class="primary-nav" aria-label="Điều hướng quản lý"><a class="nav-item" href="manager.html"><span data-icon="home" aria-hidden="true"></span><span>Menu</span></a><a class="nav-item" href="products.html"><span data-icon="box" aria-hidden="true"></span><span>Sản phẩm</span></a><a class="nav-item nav-sales" href="index.html?from=manager"><span data-icon="scan" aria-hidden="true"></span><span>Bán hàng</span></a><a class="nav-item" href="orders.html" aria-current="page"><span data-icon="orders" aria-hidden="true"></span><span>Đơn hàng</span></a><a class="nav-item" href="staff.html"><span data-icon="users" aria-hidden="true"></span><span>Nhân viên</span></a></nav>
+
+<main class="main-content" id="main">
+  <div class="page-heading"><div><p class="eyebrow">THEO DÕI BÁN HÀNG</p><h1>Đơn hàng</h1><p class="subtitle">Tra cứu đơn và kiểm tra thanh toán</p></div></div>
+  <section class="catalog-toolbar" aria-label="Tìm và lọc đơn hàng">
+    <div class="management-search-line"><div class="search-field"><span class="" data-icon="search" aria-hidden="true"></span><label class="sr-only" for="order-search">Tìm mã đơn</label><input id="order-search" type="search" placeholder="Tìm mã đơn" autocomplete="off"><button class="icon-button" id="order-search-clear" type="button" aria-label="Xóa từ khóa tìm đơn" hidden><span class="" data-icon="close" aria-hidden="true"></span></button></div><button class="button filter-launch" id="open-order-filters" type="button" aria-haspopup="dialog" aria-controls="order-filter-dialog"><span class="" data-icon="filter" aria-hidden="true"></span><span>Bộ lọc</span><span class="filter-count" id="order-filter-count" hidden></span></button></div>
+    <div class="filter-row order-status-tabs" role="group" aria-label="Trạng thái đơn"><button class="filter-button" type="button" data-order-status="all" aria-pressed="true">Tất cả <span class="filter-count"></span></button><button class="filter-button" type="button" data-order-status="completed" aria-pressed="false">Hoàn tất <span class="filter-count"></span></button><button class="filter-button" type="button" data-order-status="pending" aria-pressed="false">Đang chờ <span class="filter-count"></span></button><button class="filter-button" type="button" data-order-status="canceled" aria-pressed="false">Đã hủy <span class="filter-count"></span></button></div>
+    <div class="active-filter-line"><span id="order-filter-description"></span><button id="clear-order-filters" type="button" hidden>Bỏ lọc</button></div>
+  </section>
+  <section class="summary-strip" aria-label="Tổng hợp theo kết quả lọc"><div class="summary-item"><span>Doanh thu hoàn tất</span><strong id="order-revenue">0đ</strong></div><div class="summary-item"><span>Số đơn phù hợp</span><strong id="filtered-order-count">0</strong><small id="pending-order-count"></small></div></section>
+  <div class="catalog-info"><span id="order-result-count" role="status" aria-live="polite"></span><span>Mới nhất trước</span></div>
+  <section class="order-table" aria-label="Danh sách đơn hàng"><div class="order-table-head" id="order-table-head" aria-hidden="true"><span>Mã đơn · Thời gian</span><span>Người bán</span><span class="text-right">Thanh toán</span><span class="text-right">Trạng thái</span></div><div id="order-list"></div></section>
+  <div class="pagination" id="order-pagination"><span id="order-page-label"></span><div class="pagination-buttons"><button class="button" id="previous-order-page" type="button">← Trước</button><button class="button" id="next-order-page" type="button">Sau →</button></div></div>
+  <p class="prototype-note"><span class="" data-icon="info" aria-hidden="true"></span><span>Dữ liệu minh họa. Các đơn quản lý mẫu được tách khỏi lịch sử bán thử cũ.</span></p>
+</main>
+<dialog class="confirmation-dialog filter-dialog" id="order-filter-dialog" aria-labelledby="order-filter-title">
+  <h2 id="order-filter-title">Lọc đơn hàng</h2>
+  <form id="order-filter-form" method="dialog" novalidate>
+    <div class="field"><label for="order-date-range">Thời gian</label><select id="order-date-range"><option value="today">Hôm nay</option><option value="7days">7 ngày gần đây</option><option value="30days">30 ngày gần đây</option><option value="all">Tất cả thời gian</option><option value="custom">Khoảng ngày tùy chọn</option></select></div>
+    <div class="two-fields" id="custom-order-dates" hidden><div class="field"><label for="order-date-from">Từ ngày</label><input type="date" id="order-date-from" aria-describedby="order-filter-error"></div><div class="field"><label for="order-date-to">Đến ngày</label><input type="date" id="order-date-to" aria-describedby="order-filter-error"></div></div>
+    <div class="field"><label for="order-seller">Người bán</label><select id="order-seller"><option value="all">Tất cả người bán</option></select></div>
+    <p class="dialog-error" id="order-filter-error" role="alert"></p>
+    <div class="dialog-actions"><button class="button" type="button" data-close-dialog>Hủy</button><button class="button button-primary" type="submit">Áp dụng</button></div>
+  </form>
+</dialog>
+<p class="toast" id="admin-toast" role="status" aria-live="polite" aria-atomic="true"></p>
+<script src="js/ui-icons.js"></script>
+<script src="js/admin-shared.js"></script>
+<script src="js/admin-data.js"></script>
+<script src="js/admin-orders.js"></script>
+</body></html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Trang bán hàng và quản lý giỏ hàng." />
+    <title>Bán hàng nhanh</title>
+    <link rel="stylesheet" href="css/ui-theme.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="sales-view">
+    <main class="page-shell">
+      <div class="upper-zone">
+        <header class="fixed-tools">
+        <section class="search-section" aria-label="Tìm kiếm sản phẩm">
+          <div class="search-row">
+            <form class="search-bar" id="search-form">
+              <span class="search-icon" data-ui-icon="search" aria-hidden="true"></span>
+              <input id="product-search" type="search" placeholder="Tìm tên hoặc mã sản phẩm" autocomplete="off" />
+              <button class="scan-button" id="scan-button" type="button" aria-label="Quét mã sản phẩm">
+                <span data-ui-icon="scan" aria-hidden="true"></span>
+              </button>
+            </form>
+            <button class="logout-button" id="menu-button" type="button" aria-label="Quay về menu"><span data-ui-icon="back" aria-hidden="true"></span></button>
+          </div>
+          <p class="search-status" id="search-status" aria-live="polite"></p>
+        </section>
+
+        <section class="scanner-panel" aria-label="Quét mã sản phẩm">
+          <div class="scanner-image"><span class="camera-demo-label">Camera minh họa</span>
+            <button class="camera-switch-button" id="camera-switch" type="button" aria-label="Đổi camera">
+              <span data-ui-icon="rotate" aria-hidden="true"></span>
+            </button>
+            <div class="scanner-corner corner-top-left"></div>
+            <div class="scanner-corner corner-top-right"></div>
+            <div class="barcode" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <div class="scanner-corner corner-bottom-left"></div>
+            <div class="scanner-corner corner-bottom-right"></div>
+            <span class="scan-line" aria-hidden="true"></span>
+            <span class="scan-label" id="scan-label">Đang chờ quét</span>
+          </div>
+        </section>
+        </header>
+        <section class="panel quick-panel" id="quick-products" aria-labelledby="quick-title">
+          <div class="section-title-row">
+            <h1 id="quick-title">Thêm nhanh</h1>
+            <button class="popular-button" id="popular-button" type="button">
+              <span data-ui-icon="star" aria-hidden="true"></span> Hay bán
+            </button>
+          </div>
+          <div class="quick-grid scroll-area" id="quick-grid">
+<button class="quick-product" type="button" data-product="bread">
+              <span class="product-emoji" data-ui-icon="bread" aria-hidden="true"></span>
+              <span><strong>Bánh mì</strong><small>10.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="egg">
+              <span class="product-emoji" data-ui-icon="egg" aria-hidden="true"></span>
+              <span><strong>Trứng gà</strong><small>3.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="milk">
+              <span class="product-emoji" data-ui-icon="bottle" aria-hidden="true"></span>
+              <span><strong>Sữa tươi</strong><small>8.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="coffee">
+              <span class="product-emoji" data-ui-icon="coffee" aria-hidden="true"></span>
+              <span><strong>Cà phê</strong><small>12.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="tissue">
+              <span class="product-emoji" data-ui-icon="tissue" aria-hidden="true"></span>
+              <span><strong>Khăn giấy</strong><small>3.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="bag">
+              <span class="product-emoji" data-ui-icon="bag" aria-hidden="true"></span>
+              <span><strong>Túi giấy</strong><small>1.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="ice">
+              <span class="product-emoji" data-ui-icon="box" aria-hidden="true"></span>
+              <span><strong>Đá viên</strong><small>5.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="candy">
+              <span class="product-emoji" data-ui-icon="box" aria-hidden="true"></span>
+              <span><strong>Kẹo lẻ</strong><small>2.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="sugar">
+              <span class="product-emoji" data-ui-icon="box" aria-hidden="true"></span>
+              <span><strong>Đường</strong><small>6.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="oil">
+              <span class="product-emoji" data-ui-icon="box" aria-hidden="true"></span>
+              <span><strong>Dầu ăn</strong><small>25.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="rice">
+              <span class="product-emoji" data-ui-icon="box" aria-hidden="true"></span>
+              <span><strong>Gạo</strong><small>18.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="apple">
+              <span class="product-emoji" data-ui-icon="box" aria-hidden="true"></span>
+              <span><strong>Táo</strong><small>7.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="banana">
+              <span class="product-emoji" data-ui-icon="box" aria-hidden="true"></span>
+              <span><strong>Chuối</strong><small>6.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="orange">
+              <span class="product-emoji" data-ui-icon="box" aria-hidden="true"></span>
+              <span><strong>Cam</strong><small>9.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="yogurt">
+              <span class="product-emoji" data-ui-icon="box" aria-hidden="true"></span>
+              <span><strong>Sữa chua</strong><small>5.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="sausage">
+              <span class="product-emoji" data-ui-icon="box" aria-hidden="true"></span>
+              <span><strong>Xúc xích</strong><small>9.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="soap">
+              <span class="product-emoji" data-ui-icon="box" aria-hidden="true"></span>
+              <span><strong>Xà phòng</strong><small>11.000đ</small></span>
+            </button>
+<button class="quick-product" type="button" data-product="shampoo">
+              <span class="product-emoji" data-ui-icon="box" aria-hidden="true"></span>
+              <span><strong>Dầu gội</strong><small>22.000đ</small></span>
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel cart-panel" id="cart" aria-labelledby="cart-title">
+        <div class="cart-heading">
+          <h2 id="cart-title">Giỏ hàng <span id="cart-item-count">(4 món)</span></h2>
+        </div>
+        <div class="cart-list scroll-area" id="cart-list"></div>
+      </section>
+
+      <footer class="checkout-bar">
+        <div class="total-block">
+          <span>Tổng tiền</span>
+          <strong id="cart-total">25.000đ</strong>
+        </div>
+        <div class="checkout-actions">
+          <button class="clear-button" id="clear-cart" type="button"><span data-ui-icon="trash" aria-hidden="true"></span> Xóa tất cả</button>
+          <button class="view-cart-button" id="view-cart" type="button"><span data-ui-icon="cart" aria-hidden="true"></span> Xem giỏ</button>
+        </div>
+      </footer>
+      <p class="toast" id="toast" role="status" aria-live="polite"></p>
+    </main>
+    <script src="js/ui-icons.js"></script>
+<script src="js/app.js"></script>
+    <script src="js/prototype-nav.js"></script>
+  </body>
+</html>

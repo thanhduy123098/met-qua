@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Bản thử giao diện quản lý WebPOS. Sử dụng dữ liệu minh họa.">
+  <title>Sản phẩm · WebPOS bản thử</title>
+  <link rel="stylesheet" href="css/ui-theme.css">
+  <link rel="stylesheet" href="css/admin-theme.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Đến nội dung chính</a><header class="app-header"><div class="header-inner">
+  <a class="brand" href="manager.html" aria-label="WebPOS, menu quản lý"><span class="brand-symbol" data-icon="store" aria-hidden="true"></span><span>WebPOS<small>Quản lý cửa hàng</small></span></a>
+  
+  <div class="header-actions"><span class="trial-badge">Bản thử · Glass</span><a class="logout-link" href="login.html" aria-label="Đăng xuất về màn hình đăng nhập mẫu" title="Đăng xuất"><span class="" data-icon="logout" aria-hidden="true"></span></a></div>
+</div></header>
+<nav class="primary-nav" aria-label="Điều hướng quản lý"><a class="nav-item" href="manager.html"><span data-icon="home" aria-hidden="true"></span><span>Menu</span></a><a class="nav-item" href="products.html" aria-current="page"><span data-icon="box" aria-hidden="true"></span><span>Sản phẩm</span></a><a class="nav-item nav-sales" href="index.html?from=manager"><span data-icon="scan" aria-hidden="true"></span><span>Bán hàng</span></a><a class="nav-item" href="orders.html"><span data-icon="orders" aria-hidden="true"></span><span>Đơn hàng</span></a><a class="nav-item" href="staff.html"><span data-icon="users" aria-hidden="true"></span><span>Nhân viên</span></a></nav>
+<main class="main-content catalog-page" id="main">
+  <div class="page-heading"><div><p class="eyebrow">DANH MỤC CỬA HÀNG</p><h1>Sản phẩm</h1><p class="subtitle">Quản lý giá bán và tồn kho</p></div><button class="button button-primary" id="add-product" type="button"><span class="" data-icon="plus" aria-hidden="true"></span><span>Thêm</span></button></div>
+  <section class="catalog-toolbar" aria-label="Tìm kiếm và lọc sản phẩm">
+    <div class="search-line"><div class="search-field"><span class="" data-icon="search" aria-hidden="true"></span><label class="sr-only" for="admin-search">Tìm tên hoặc mã sản phẩm</label><input id="admin-search" type="search" placeholder="Tìm tên hoặc mã sản phẩm" autocomplete="off"><button class="icon-button" id="search-clear" type="button" aria-label="Xóa từ khóa tìm kiếm" hidden><span class="" data-icon="close" aria-hidden="true"></span></button></div>
+      <label class="sort-control"><span class="" data-icon="sort" aria-hidden="true"></span><span class="sr-only">Sắp xếp sản phẩm</span><select id="product-sort"><option value="name">Tên A–Z</option><option value="stock">Tồn kho tăng dần</option><option value="price-low">Giá tăng dần</option><option value="price-high">Giá giảm dần</option></select></label>
+    </div>
+    <div class="filter-row" role="group" aria-label="Lọc danh mục"><button class="filter-button" type="button" data-filter="all" aria-pressed="true">Tất cả <span class="filter-count">12</span></button><button class="filter-button" type="button" data-filter="out" aria-pressed="false">Hết hàng <span class="filter-count">2</span></button><button class="filter-button" type="button" data-filter="quick" aria-pressed="false">Thêm nhanh <span class="filter-count">6</span></button></div>
+  </section>
+  <div class="catalog-info"><span id="result-count" role="status" aria-live="polite">Đang hiển thị danh mục…</span></div>
+  <section class="catalog" aria-label="Danh sách sản phẩm"><div class="catalog-head" id="catalog-heading" aria-hidden="true"><span>Sản phẩm</span><span class="price-column">Giá bán</span><span>Tồn kho</span><span></span></div><div id="product-list"></div></section>
+  <p class="catalog-end" id="catalog-end">Bạn đã xem hết danh sách.</p>
+  <p class="prototype-note"><span class="" data-icon="info" aria-hidden="true"></span><span>Dữ liệu minh họa. Thêm, sửa hoặc xóa chỉ cập nhật danh mục quản lý trong bản thử này.</span></p>
+</main>
+<dialog class="drawer" id="product-drawer" aria-labelledby="form-title">
+  <header class="drawer-header"><div><p class="eyebrow">DỮ LIỆU MINH HỌA</p><h2 id="form-title">Thêm sản phẩm</h2></div><button class="icon-button" type="button" data-close-dialog aria-label="Đóng biểu mẫu"><span class="" data-icon="close" aria-hidden="true"></span></button></header>
+  <form class="drawer-form" id="product-form" novalidate autocomplete="off">
+    <div class="drawer-body">
+      <div class="field"><label for="field-name">Tên sản phẩm <span class="required">*</span></label><input id="field-name" name="name" placeholder="Ví dụ: Nước suối Lavie 500 ml" maxlength="150" required aria-describedby="error-name" autofocus><span class="field-error" id="error-name" aria-live="polite"></span></div>
+      <div class="field"><label for="field-barcode">Mã sản phẩm <span class="required">*</span></label><input id="field-barcode" name="barcode" placeholder="Nhập mã vạch hoặc mã nội bộ" maxlength="64" required aria-describedby="barcode-help error-barcode"><small id="barcode-help">Mỗi sản phẩm dùng một mã riêng. Ví dụ: BM001.</small><span class="field-error" id="error-barcode" aria-live="polite"></span></div>
+      <div class="two-fields">
+        <div class="field"><label for="field-price">Giá bán <span class="required">*</span></label><div class="input-suffix"><input id="field-price" name="price" type="number" inputmode="numeric" placeholder="0" min="0" step="1" required aria-describedby="error-price"><span aria-hidden="true">đ</span></div><span class="field-error" id="error-price" aria-live="polite"></span></div>
+        <div class="field"><label for="field-stock">Tồn kho <span class="required">*</span></label><input id="field-stock" name="stock" type="number" inputmode="numeric" placeholder="0" min="0" step="1" required aria-describedby="error-stock"><span class="field-error" id="error-stock" aria-live="polite"></span></div>
+      </div>
+      <label class="quick-toggle"><input id="field-quick" name="isQuickAdd" type="checkbox"><span><strong>Hiển thị trong Thêm nhanh</strong><small>Phác thảo tùy chọn thêm nhanh trên màn bán hàng.</small></span></label>
+      <p class="form-prototype-note">Các thay đổi chỉ áp dụng cho danh mục quản lý minh họa. Bản thử chưa đồng bộ với danh mục bán hàng cũ.</p>
+    </div>
+    <footer class="drawer-footer"><button class="button" type="button" data-close-dialog>Hủy</button><button class="button button-primary" type="submit"><span class="" data-icon="check" aria-hidden="true"></span><span id="save-label">Lưu sản phẩm</span></button></footer>
+  </form>
+</dialog>
+<dialog class="confirmation-dialog" id="delete-dialog" aria-labelledby="delete-title" aria-describedby="delete-description">
+  <span class="confirmation-icon" data-icon="trash" aria-hidden="true"></span><h2 id="delete-title">Xóa sản phẩm?</h2><p id="delete-description">“<strong id="delete-name"></strong>” sẽ được xóa khỏi danh mục quản lý của bản thử.</p><div class="dialog-actions"><button class="button" type="button" data-close-dialog autofocus>Giữ lại</button><button class="button button-danger" id="confirm-delete" type="button">Xóa sản phẩm</button></div>
+</dialog>
+<p class="toast" id="admin-toast" role="status" aria-live="polite" aria-atomic="true"></p>
+<script src="js/ui-icons.js"></script>
+<script src="js/admin-shared.js"></script>
+<script src="js/admin-products.js"></script>
+</body></html>

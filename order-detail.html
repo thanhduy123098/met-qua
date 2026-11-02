@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Bản thử giao diện quản lý WebPOS. Sử dụng dữ liệu minh họa.">
+  <title>Chi tiết đơn hàng · WebPOS bản thử</title>
+  <link rel="stylesheet" href="css/ui-theme.css">
+  <link rel="stylesheet" href="css/admin-theme.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/admin-management.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Đến nội dung chính</a><header class="app-header"><div class="header-inner">
+  <a class="brand" href="manager.html" aria-label="WebPOS, menu quản lý"><span class="brand-symbol" data-icon="store" aria-hidden="true"></span><span>WebPOS<small>Quản lý cửa hàng</small></span></a>
+  
+  <div class="header-actions"><span class="trial-badge">Bản thử · Glass</span><a class="logout-link" href="login.html" aria-label="Đăng xuất về màn hình đăng nhập mẫu" title="Đăng xuất"><span class="" data-icon="logout" aria-hidden="true"></span></a></div>
+</div></header>
+<nav class="primary-nav" aria-label="Điều hướng quản lý"><a class="nav-item" href="manager.html"><span data-icon="home" aria-hidden="true"></span><span>Menu</span></a><a class="nav-item" href="products.html"><span data-icon="box" aria-hidden="true"></span><span>Sản phẩm</span></a><a class="nav-item nav-sales" href="index.html?from=manager"><span data-icon="scan" aria-hidden="true"></span><span>Bán hàng</span></a><a class="nav-item" href="orders.html" aria-current="page"><span data-icon="orders" aria-hidden="true"></span><span>Đơn hàng</span></a><a class="nav-item" href="staff.html"><span data-icon="users" aria-hidden="true"></span><span>Nhân viên</span></a></nav>
+
+<main class="main-content" id="main">
+  <a class="back-text" id="back-to-orders" href="orders.html"><span class="" data-icon="arrow" aria-hidden="true"></span>Danh sách đơn hàng</a>
+  <div id="order-detail"></div>
+  <p class="prototype-note"><span class="" data-icon="info" aria-hidden="true"></span><span>Đây là bản thử giao diện. Xác nhận/hủy chỉ đổi trạng thái đơn minh họa, không chuyển tiền hoặc thay đổi tồn kho thật.</span></p>
+</main>
+<dialog class="confirmation-dialog" id="order-action-dialog" aria-labelledby="order-action-title" aria-describedby="order-action-message">
+  <span class="confirmation-icon" data-icon="info" aria-hidden="true"></span><h2 id="order-action-title"></h2><p id="order-action-message"></p><p class="dialog-error" id="order-action-error" role="alert"></p>
+  <div class="dialog-actions"><button class="button" type="button" data-close-dialog autofocus>Quay lại</button><button class="button button-primary" id="confirm-order-action" type="button"></button></div>
+</dialog>
+<p class="toast" id="admin-toast" role="status" aria-live="polite" aria-atomic="true"></p>
+<script src="js/ui-icons.js"></script>
+<script src="js/admin-shared.js"></script>
+<script src="js/admin-data.js"></script>
+<script src="js/admin-order-detail.js"></script>
+</body></html>

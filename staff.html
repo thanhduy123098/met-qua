@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Bản thử giao diện quản lý WebPOS. Sử dụng dữ liệu minh họa.">
+  <title>Nhân viên · WebPOS bản thử</title>
+  <link rel="stylesheet" href="css/ui-theme.css">
+  <link rel="stylesheet" href="css/admin-theme.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/admin-management.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Đến nội dung chính</a><header class="app-header"><div class="header-inner">
+  <a class="brand" href="manager.html" aria-label="WebPOS, menu quản lý"><span class="brand-symbol" data-icon="store" aria-hidden="true"></span><span>WebPOS<small>Quản lý cửa hàng</small></span></a>
+  
+  <div class="header-actions"><span class="trial-badge">Bản thử · Glass</span><a class="logout-link" href="login.html" aria-label="Đăng xuất về màn hình đăng nhập mẫu" title="Đăng xuất"><span class="" data-icon="logout" aria-hidden="true"></span></a></div>
+</div></header>
+<nav class="primary-nav" aria-label="Điều hướng quản lý"><a class="nav-item" href="manager.html"><span data-icon="home" aria-hidden="true"></span><span>Menu</span></a><a class="nav-item" href="products.html"><span data-icon="box" aria-hidden="true"></span><span>Sản phẩm</span></a><a class="nav-item nav-sales" href="index.html?from=manager"><span data-icon="scan" aria-hidden="true"></span><span>Bán hàng</span></a><a class="nav-item" href="orders.html"><span data-icon="orders" aria-hidden="true"></span><span>Đơn hàng</span></a><a class="nav-item" href="staff.html" aria-current="page"><span data-icon="users" aria-hidden="true"></span><span>Nhân viên</span></a></nav>
+
+<main class="main-content catalog-page" id="main">
+  <div class="page-heading"><div><p class="eyebrow">TÀI KHOẢN CỬA HÀNG</p><h1>Nhân viên</h1><p class="subtitle">Quản lý nhân viên bán hàng</p></div><button class="button button-primary" id="add-staff" type="button"><span class="" data-icon="plus" aria-hidden="true"></span><span>Thêm</span></button></div>
+  <section class="catalog-toolbar" aria-label="Tìm kiếm và lọc nhân viên"><div class="search-field"><span class="" data-icon="search" aria-hidden="true"></span><label class="sr-only" for="staff-search">Tìm tên hoặc tên đăng nhập</label><input id="staff-search" type="search" placeholder="Tìm tên hoặc tên đăng nhập" autocomplete="off"><button class="icon-button" id="staff-search-clear" type="button" aria-label="Xóa từ khóa tìm nhân viên" hidden><span class="" data-icon="close" aria-hidden="true"></span></button></div>
+    <div class="filter-row" role="group" aria-label="Trạng thái nhân viên"><button class="filter-button" type="button" data-staff-status="all" aria-pressed="true">Tất cả <span class="filter-count"></span></button><button class="filter-button" type="button" data-staff-status="active" aria-pressed="false">Hoạt động <span class="filter-count"></span></button><button class="filter-button" type="button" data-staff-status="disabled" aria-pressed="false">Đã khóa <span class="filter-count"></span></button></div>
+  </section>
+  <div class="catalog-info"><span id="staff-result-count" role="status" aria-live="polite"></span><span>Tên A–Z</span></div>
+  <section class="staff-list" id="staff-list" aria-label="Danh sách nhân viên"></section>
+  <p class="prototype-note"><span class="" data-icon="info" aria-hidden="true"></span><span>Tài khoản minh họa, chưa dùng để đăng nhập. Khóa/mở khóa trong bản thử chỉ thay đổi trạng thái hiển thị.</span></p>
+</main>
+<dialog class="drawer" id="staff-drawer" aria-labelledby="staff-form-title">
+  <header class="drawer-header"><div><p class="eyebrow">DỮ LIỆU MINH HỌA</p><h2 id="staff-form-title">Thêm nhân viên</h2></div><button class="icon-button" type="button" data-close-dialog aria-label="Đóng form nhân viên"><span class="" data-icon="close" aria-hidden="true"></span></button></header>
+  <form class="drawer-form" id="staff-form" method="dialog" novalidate autocomplete="off"><div class="drawer-body">
+    <div class="field"><label for="staff-name">Tên hiển thị <span class="required">*</span></label><input id="staff-name" type="text" placeholder="Ví dụ: Nguyễn Văn An" maxlength="100" autofocus required aria-describedby="staff-name-help staff-name-error"><small id="staff-name-help">Tên để nhận biết nhân viên, tối đa 100 ký tự.</small><span id="staff-name-error" class="field-error" aria-live="polite"></span></div>
+    <div class="field"><label for="staff-username">Tên đăng nhập <span class="required">*</span></label><input id="staff-username" type="text" placeholder="Ví dụ: nv05" maxlength="50" autocomplete="off" autocapitalize="none" spellcheck="false" required aria-describedby="staff-username-help staff-username-error"><small id="staff-username-help">3–50 ký tự: chữ a–z, số, dấu chấm, gạch dưới hoặc gạch ngang.</small><span id="staff-username-error" class="field-error" aria-live="polite"></span></div>
+    <div class="field"><label for="staff-password">Mật khẩu <span class="required">*</span></label><div class="password-input"><input id="staff-password" type="password" autocomplete="new-password" maxlength="128" required aria-describedby="staff-password-help staff-password-error"><button class="icon-button" id="toggle-staff-password" type="button" aria-label="Hiện mật khẩu mẫu" aria-pressed="false"><span class="" data-icon="eye" aria-hidden="true"></span></button></div><small id="staff-password-help">15–128 ký tự. Chỉ dùng mật khẩu giả trong bản thiết kế.</small><span class="field-error" id="staff-password-error" aria-live="polite"></span></div>
+    <div class="field"><label for="staff-confirm">Nhập lại mật khẩu <span class="required">*</span></label><input id="staff-confirm" type="password" placeholder="" maxlength="128" autocomplete="new-password" required aria-describedby="staff-confirm-help staff-confirm-error"><small id="staff-confirm-help">Nhập giống mật khẩu phía trên.</small><span id="staff-confirm-error" class="field-error" aria-live="polite"></span></div>
+    <p class="form-prototype-note">Mật khẩu nhập thử không được lưu. Tài khoản mẫu mới có trạng thái Đang hoạt động.</p><p class="dialog-error" id="staff-save-error" role="alert"></p>
+  </div><footer class="drawer-footer"><button class="button" type="button" data-close-dialog>Hủy</button><button class="button button-primary" type="submit"><span class="" data-icon="check" aria-hidden="true"></span><span>Tạo nhân viên</span></button></footer></form>
+</dialog>
+<dialog class="confirmation-dialog" id="staff-detail-dialog" aria-labelledby="staff-detail-title"><div id="staff-detail-content"></div><div class="dialog-actions"><button class="button button-primary" type="button" data-close-dialog>Đóng</button></div></dialog>
+<dialog class="confirmation-dialog" id="staff-status-dialog" aria-labelledby="staff-status-title" aria-describedby="staff-status-message"><span class="confirmation-icon" data-icon="lock" aria-hidden="true"></span><h2 id="staff-status-title"></h2><p id="staff-status-message"></p><p class="dialog-error" id="staff-status-error" role="alert"></p><div class="dialog-actions"><button class="button" type="button" data-close-dialog autofocus>Quay lại</button><button class="button button-danger" id="confirm-staff-status" type="button"></button></div></dialog>
+<p class="toast" id="admin-toast" role="status" aria-live="polite" aria-atomic="true"></p>
+<script src="js/ui-icons.js"></script>
+<script src="js/admin-shared.js"></script>
+<script src="js/admin-data.js"></script>
+<script src="js/admin-staff.js"></script>
+</body></html>

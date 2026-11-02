@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Hoàn tất thanh toán đơn hàng." />
+    <title>Hoàn tất | Bán hàng nhanh</title>
+    <link rel="stylesheet" href="css/ui-theme.css" />
+    <link rel="stylesheet" href="css/success.css" />
+  </head>
+  <body>
+    <main class="success-page">
+      <section class="success-card" aria-labelledby="success-title">
+        <p class="success-kicker">ĐƠN HÀNG ĐÃ ĐƯỢC GHI NHẬN</p>
+        <div class="success-icon" aria-hidden="true">✓</div>
+        <h1 id="success-title">Thanh toán thành công</h1>
+        <strong class="success-total" id="success-total">0đ</strong>
+
+        <dl class="order-summary">
+          <div><dt>Mã đơn</dt><dd id="order-code">DEMO-001</dd></div>
+          <div><dt>Người bán</dt><dd>NV01</dd></div>
+          <div><dt>Phương thức</dt><dd id="payment-method">Tiền mặt</dd></div>
+          <div><dt>Tiền khách đưa</dt><dd id="cash-received">0đ</dd></div>
+          <div><dt>Tiền thừa</dt><dd id="cash-change">0đ</dd></div>
+        </dl>
+
+        <div class="success-actions">
+          <button class="new-order-button" id="new-order" type="button">Tạo đơn mới</button>
+          <a class="detail-button" href="history.html">Xem chi tiết đơn</a>
+        </div>
+      </section>
+      <p class="success-toast" id="success-toast" role="status" aria-live="polite"></p>
+    </main>
+    <script src="js/ui-icons.js"></script>
+<script src="js/success.js"></script>
+    <script src="js/prototype-nav.js"></script>
+  </body>
+</html>

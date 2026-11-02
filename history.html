@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lịch sử đơn hàng trong phiên làm việc." />
+    <title>Lịch sử đơn hàng | Bán hàng nhanh</title>
+    <link rel="stylesheet" href="css/ui-theme.css" />
+    <link rel="stylesheet" href="css/history.css" />
+  </head>
+  <body>
+    <main class="history-page">
+      <header class="history-header">
+        <a class="back-link" href="menu.html" aria-label="Quay lại menu"><span data-ui-icon="back" aria-hidden="true"></span></a>
+        <div>
+          <p class="history-kicker">QUẢN LÝ CỬA HÀNG</p>
+          <h1>Lịch sử đơn hàng</h1>
+        </div>
+        <span class="header-mark" aria-hidden="true" data-ui-icon="store"></span>
+      </header>
+      <section class="history-card" aria-labelledby="history-title">
+        <div class="history-card-heading">
+          <div>
+            <h2 id="history-title">Đơn đã hoàn tất</h2>
+            <p id="history-count">0 đơn trong phiên này</p>
+          </div>
+          <span class="history-icon" aria-hidden="true" data-ui-icon="orders"></span>
+        </div>
+        <div class="order-list" id="order-list"></div>
+      </section>
+    </main>
+    <script src="js/ui-icons.js"></script>
+<script src="js/history.js"></script>
+    <script src="js/prototype-nav.js"></script>
+  </body>
+</html>

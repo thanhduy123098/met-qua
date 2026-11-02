@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Xem lại giỏ hàng trước khi chốt đơn." />
+    <title>Giỏ hàng | Bán hàng nhanh</title>
+    <link rel="stylesheet" href="css/ui-theme.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+  </head>
+  <body>
+    <main class="cart-page">
+      <header class="cart-page-header">
+        <h1>Giỏ hàng</h1>
+      </header>
+
+      <section class="review-card" aria-labelledby="review-title">
+        <div class="review-heading">
+          <h2 id="review-title">Sản phẩm đã chọn</h2>
+          <span id="review-count"></span>
+        </div>
+        <div class="review-list" id="review-list"></div>
+      </section>
+
+      <footer class="review-footer">
+        <div class="review-total">
+          <span>Tổng tiền</span>
+          <strong id="review-total">0đ</strong>
+        </div>
+        <div class="review-actions">
+          <button class="back-button" id="back-to-sales" type="button">TRỞ LẠI</button>
+          <button class="confirm-button" id="open-payment" type="button">CHỐT ĐƠN</button>
+        </div>
+      </footer>
+
+      <div class="payment-backdrop" id="payment-backdrop" hidden>
+        <section class="payment-modal" role="dialog" aria-modal="true" aria-labelledby="payment-title">
+          <button class="modal-close" id="close-payment" type="button" aria-label="Đóng">×</button>
+          <p class="modal-kicker">XÁC NHẬN ĐƠN HÀNG</p>
+          <h2 id="payment-title">Chọn phương thức thanh toán</h2>
+          <p class="modal-summary"><span id="payment-count">0 món</span><strong id="payment-total">0đ</strong></p>
+          <div class="payment-options">
+            <button class="payment-option is-selected" type="button" data-payment="cash">
+              <span class="payment-icon" aria-hidden="true" data-ui-icon="money"></span>
+              <strong>Tiền mặt</strong>
+            </button>
+            <button class="payment-option" type="button" data-payment="qr">
+              <span class="payment-icon" aria-hidden="true" data-ui-icon="qr"></span>
+              <strong>VietQR</strong>
+            </button>
+          </div>
+          <div class="payment-panel is-visible" id="cash-panel">
+            <label for="cash-received">Tiền khách đưa</label>
+            <input id="cash-received" type="number" min="0" placeholder="Nhập số tiền khách đưa" />
+            <div class="cash-shortcuts">
+              <button type="button" data-cash="15000">15.000</button>
+              <button type="button" data-cash="20000">20.000</button>
+              <button type="button" data-cash="50000">50.000</button>
+            </div>
+            <div class="change-summary">
+              <small>Tiền thừa trả khách</small>
+              <strong id="cash-change">0đ</strong>
+            </div>
+            <p class="payment-note">Kiểm tra tiền khách đưa trước khi xác nhận.</p>
+            <button class="payment-submit" id="confirm-cash" type="button">ĐÃ NHẬN TIỀN</button>
+          </div>
+          <div class="payment-panel" id="qr-panel">
+            <p class="qr-title">Chờ thanh toán</p>
+            <strong class="qr-amount" id="qr-amount">0đ</strong>
+            <div class="qr-placeholder">
+              <strong>VIETQR</strong>
+              <span>Vùng hiển thị mã</span>
+            </div>
+            <p class="payment-note">Chỉ xác nhận sau khi kiểm tra tiền đã vào tài khoản cửa hàng.</p>
+            <button class="payment-submit" id="confirm-qr" type="button">ĐÃ NHẬN TIỀN</button>
+          </div>
+        </section>
+      </div>
+      <p class="cart-toast" id="cart-toast" role="status" aria-live="polite"></p>
+    </main>
+    <script src="js/ui-icons.js"></script>
+<script src="js/cart.js"></script>
+    <script src="js/prototype-nav.js"></script>
+  </body>
+</html>

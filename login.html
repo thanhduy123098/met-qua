@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Đăng nhập vào màn hình bán hàng." />
+    <title>Đăng nhập | Bán hàng nhanh</title>
+    <link rel="stylesheet" href="css/ui-theme.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <main class="login-page">
+      <section class="login-card" aria-labelledby="login-title">
+        <div class="brand-mark" aria-hidden="true" data-ui-icon="store"></div>
+
+        <div class="login-illustration" aria-hidden="true">
+          <div class="illustration-sun"></div>
+          <div class="illustration-person">
+            <span class="person-head"></span>
+            <span class="person-body"></span>
+            <span class="person-arm"></span>
+            <span class="person-leg person-leg-left"></span>
+            <span class="person-leg person-leg-right"></span>
+          </div>
+          <div class="illustration-box"></div>
+          <span class="illustration-dot dot-one"></span>
+          <span class="illustration-dot dot-two"></span>
+          <span class="illustration-dot dot-three"></span>
+          <span class="illustration-shape shape-square"></span>
+          <span class="illustration-shape shape-circle"></span>
+        </div>
+
+        <h1 id="login-title">Đăng nhập</h1>
+        <p class="login-subtitle">Đăng nhập để tiếp tục bán hàng</p>
+
+        <form class="login-form" action="menu.html" method="get">
+          <label class="input-group">
+            <span class="input-icon" aria-hidden="true" data-ui-icon="user"></span>
+            <span class="sr-only">Tên đăng nhập</span>
+            <input type="text" name="email" placeholder="Tên đăng nhập" autocomplete="username" required />
+          </label>
+          <label class="input-group">
+            <span class="input-icon" aria-hidden="true" data-ui-icon="lock"></span>
+            <span class="sr-only">Mật khẩu</span>
+            <input type="password" placeholder="Mật khẩu" autocomplete="current-password" required />
+          </label>
+          <button class="login-button" type="submit">Đăng nhập</button>
+        </form>
+
+      <p class="demo-note">Bản giao diện thử · Vui lòng dùng thông tin giả</p>
+</section>
+    </main>
+  <script src="js/ui-icons.js"></script>
+</body>
+</html>
